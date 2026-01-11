@@ -5,7 +5,7 @@ namespace ComtradeAPI.Data
 {
     public class CampaignDbContext : DbContext
     {
-        public CampaignDbContext(DbContextOptions options) : base(options)
+        public CampaignDbContext(DbContextOptions<CampaignDbContext> options) : base(options)
         {
         }
 

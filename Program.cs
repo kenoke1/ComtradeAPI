@@ -14,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Controllers
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 // Swagger
 builder.Services.AddSwaggerGen(c =>
@@ -117,6 +118,8 @@ builder.Services.AddCors(options =>
 // Health Checks
 builder.Services.AddHealthChecks().AddDbContextCheck<CampaignDbContext>("database");
 
+
+
 var app = builder.Build();
 
 // Development
@@ -147,7 +150,7 @@ using (var scope = app.Services.CreateScope())
         if (app.Environment.IsDevelopment())
         {
             dbContext.Database.Migrate();
-            app.Logger.LogInformation("✅ Database migrations applied");
+            app.Logger.LogInformation("Database migrations applied");
 
             // Seed default users
             await SeedData.Initialize(dbContext);
@@ -155,9 +158,9 @@ using (var scope = app.Services.CreateScope())
     }
     catch (Exception ex)
     {
-        app.Logger.LogError(ex, "❌ Error applying migrations");
+        app.Logger.LogError(ex, "Error applying migrations");
     }
 }
 
-app.Logger.LogInformation("🚀 Customer Campaign API started");
+app.Logger.LogInformation("Customer Campaign API started");
 app.Run();

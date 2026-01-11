@@ -14,9 +14,9 @@ namespace ComtradeAPI.Services
     {
         private readonly CampaignDbContext _context;
         private readonly IConfiguration _configuration;
-        private readonly ILogger _logger;
+        private readonly ILogger<AuthService> _logger;
 
-        public AuthService(CampaignDbContext context, IConfiguration configuration, ILogger logger)
+        public AuthService(CampaignDbContext context, IConfiguration configuration, ILogger<AuthService> logger)
         {
             _context = context;
             _configuration = configuration;

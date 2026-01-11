@@ -81,7 +81,7 @@ namespace ComtradeAPI.Data
                 new Customer { CustomerId = "CUST04", Name = "Dfudo Dfudo", Email = "dfudo.dfudo@mail.com", PhoneNumber = "+1234567893", IsLoyalCustomer = true, CreatedAt = DateTime.UtcNow },
                 new Customer { CustomerId = "CUST05", Name = "Efudo Efudo", Email = "efudo.efudo@mail.com", PhoneNumber = "+1234567894", IsLoyalCustomer = true, CreatedAt = DateTime.UtcNow },
                 new Customer { CustomerId = "CUST06", Name = "Gfudo Gfudo", Email = "gfudo.gfudo@mail.com", PhoneNumber = "+1234567895", IsLoyalCustomer = true, CreatedAt = DateTime.UtcNow },
-                new Customer { CustomerId = "CUST05", Name = "Hfudo Hfudo", Email = "hfudo.hfudo@mail.com", PhoneNumber = "+1234567896", IsLoyalCustomer = true, CreatedAt = DateTime.UtcNow },
+                new Customer { CustomerId = "CUST07", Name = "Hfudo Hfudo", Email = "hfudo.hfudo@mail.com", PhoneNumber = "+1234567896", IsLoyalCustomer = true, CreatedAt = DateTime.UtcNow },
 
             };
             await context.Customers.AddRangeAsync(customer);
